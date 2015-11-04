@@ -134,6 +134,12 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="mutex.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="mutex.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="scheduler.c">
       <SubType>compile</SubType>
     </Compile>

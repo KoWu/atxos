@@ -50,7 +50,7 @@ static volatile int funcc;
 //init function
 void func()
 {
-	funcc = 1000;
+	funcc = 0;
 	CreateThread(func1);
 	for(;;) {
 		funcc--;

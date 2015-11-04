@@ -59,6 +59,11 @@ char CreateThread(void* entrypoint) {
 	return -1;
 	
 	freeslot:
+	threads[n].status = THREAD_ACTIVE;
 	threads[n].pStack = initStack((void*)(0x4000 - n * 512), entrypoint);
 	return 0;
+}
+
+char SuspendThread() {
+	
 }

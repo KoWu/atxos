@@ -8,14 +8,16 @@
 #include "hardware.h"
 #include "thread.h"
 
-volatile THREAD* pContext = 0;
+volatile void* pContext = 0;
 THREAD threads[MAX_THREADS];
 
 void schedNext() {
 	static BYTE i = 0;
-	threads[i++].pStack = pContext;
-	if (i >= MAX_THREADS || !threads[i].pStack) {
-		i = 0;
-	}
+	do {
+		threads[i++].pStack = pContext;
+		if (i >= MAX_THREADS || !threads[i].pStack) {
+			i = 0;
+		}
+	} while (threads[i].status != THREAD_ACTIVE);
 	pContext = threads[i].pStack;
 }

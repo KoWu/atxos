@@ -6,9 +6,9 @@
 
 ARCH=atxmega128a1
 CC=avr-gcc
-CFLAGS=-g -mmcu=$(ARCH)
+CFLAGS=-g -mmcu=$(ARCH) -std=gnu99
 TARGET=atxos
-SOURCES=dispatch.c scheduler.c thread.c main.c
+SOURCES=$(wildcard *.c)
 OBJECTS=$(SOURCES:.c=.o)
 RM=rm -f
 .PHONY=all clean

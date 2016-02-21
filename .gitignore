@@ -1,2 +1,7 @@
 Debug/
+Release/
 .vs/
+*.atsuo
+*.atsln
+*.cproj
+*.xml

@@ -1,0 +1,13 @@
+Every task is a thread.
+
+Every thread (also idle) has a thread control block (TCB).
+
+The TCB stores information about the thread. It also stores a pointer to the
+next TCB.
+
+All threads form a linked (ring) list. 
+The idle threads TCB points to the first thread.
+The last threads TCB points to the idle thread.
+
+[idle] -> [t1] -> [t2] -> [t3]
+   ^------------------------|
